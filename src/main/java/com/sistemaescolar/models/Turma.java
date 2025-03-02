@@ -1,4 +1,5 @@
 package com.sistemaescolar.models;
+import jakarta.persistence.ForeignKey;
 
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class Turma {
 	
 	@OneToOne(cascade = CascadeType.ALL) 
     @MapsId
-	@JoinColumn(name = "id") 
+	@JoinColumn(name = "id", foreignKey = @ForeignKey(name = "fk_turma_ano")) 
 	private Ano ano;
 	
 	@OneToMany(mappedBy = "turma")
@@ -33,7 +34,7 @@ public class Turma {
 	
 	@OneToOne(cascade = CascadeType.ALL) 
     @MapsId
-	@JoinColumn(name = "id") 
+	@JoinColumn(name = "periodo_id", foreignKey = @ForeignKey(name = "fk_turma_periodo")) 
 	private Periodo periodo; 
 
 }
