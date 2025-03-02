@@ -5,16 +5,16 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import com.sistemaescolar.exceptions.UserNotFoundException;
 import com.sistemaescolar.exceptions.UserNullException;
-import com.sistemaescolar.models.User;
-import com.sistemaescolar.repositories.UserRepository;
+import com.sistemaescolar.models.Users;
+import com.sistemaescolar.repositories.UsersRepository;
 
 @Service
-public class UserService {
+public class UsersService {
 
-private UserRepository userRepository; 
+private UsersRepository userRepository; 
 
 
-public User SalvarUser(User user) { 
+public Users SalvarUser(Users user) { 
 	
 	if (user.getNome() == null || user.getEmail() == null || user.getSenha() == null  
 		|| user.getCargo() == null) { 
@@ -26,16 +26,16 @@ public User SalvarUser(User user) {
 }
 	
 // Buscar user por ID
-public User buscarUserPorId(Long id) {
+public Users buscarUserPorId(Long id) {
 	 return userRepository.findById(id)
 			.orElseThrow(() -> new UserNotFoundException());
 }
 
 
 // Buscar user pelo nome
-public List<User> buscarUserPorNome(String nome) {
+public List<Users> buscarUserPorNome(String nome) {
     
-	List<User> users = userRepository.findByNomeContainingIgnoreCase(nome);
+	List<Users> users = userRepository.findByNomeContainingIgnoreCase(nome);
    
 	if(users.isEmpty()) { 
 		throw new UserNotFoundException(); 

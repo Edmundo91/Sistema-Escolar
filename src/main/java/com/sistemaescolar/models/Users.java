@@ -3,7 +3,10 @@ package com.sistemaescolar.models;
 import jakarta.persistence.JoinColumn;
 
 import java.time.LocalDate;
+
 import java.util.List;
+
+
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -17,7 +20,7 @@ import lombok.Data;
 
 @Data 
 @Entity
-public class User {
+public class Users {
 	@Id	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -34,6 +37,6 @@ public class User {
     @JoinTable(name="users_roles",
     joinColumns = @JoinColumn(name = "user_id"),
     inverseJoinColumns = @JoinColumn(name="role_id"))
-	private List<Role> cargo; 
+	private List<Role> cargo;
 	
 }

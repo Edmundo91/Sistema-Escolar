@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sistemaescolar.models.User;
-import com.sistemaescolar.services.UserService;
+import com.sistemaescolar.models.Users;
+import com.sistemaescolar.services.UsersService;
 
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
- private UserService service;
+ private UsersService service;
 	
 
  @PostMapping("/save")
- public User registrarUser(User user) { 
+ public Users registrarUser(Users user) { 
 	 
 	return service.SalvarUser(user); 
 	 
@@ -26,7 +26,7 @@ public class UserController {
  
  
  @GetMapping("/{id}")
- public User buscarUserPorId(Long id) { 
+ public Users buscarUserPorId(Long id) { 
 	 
 	 return service.buscarUserPorId(id);
 	 
@@ -35,7 +35,7 @@ public class UserController {
  
  
 @GetMapping("/busca")    
-public List<User> buscarUserPorNome(String nome){ 
+public List<Users> buscarUserPorNome(String nome){ 
 		
 	return service.buscarUserPorNome(nome);
 				
