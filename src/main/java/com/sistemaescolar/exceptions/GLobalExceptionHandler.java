@@ -64,8 +64,35 @@ public class GLobalExceptionHandler extends ResponseEntityExceptionHandler  {
 			
 		}
 	
+		//Exceção para requisição incompleta 
+		@ExceptionHandler(TurmaNullException.class)
+		public ResponseEntity<Object> SaveTurmaNull(){  
+			
+			Map<String, Object> body = new HashMap<String, Object>(); 
+			
+			body.put("message", "verifique os campos que precisam ser preenchidos"); 
+			
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
+			
+		}
 		
 		
 		
-	
+		//Exceção para quando a turma não for encontrada
+				@ExceptionHandler(TurmaNotFoundException.class)
+				public ResponseEntity<Object> TurmaNull(){ 
+					
+			        Map<String, Object> body = new HashMap<String, Object>(); 
+					
+					body.put("message", "nenhuma turma encontrada"); 
+					
+					return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
+					
+					
+				}
+		
+		
+		
+		
+		
 }

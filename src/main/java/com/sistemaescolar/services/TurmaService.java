@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sistemaescolar.exceptions.AlunoNotFoundException;
+import com.sistemaescolar.exceptions.TurmaNotFoundException;
+import com.sistemaescolar.exceptions.TurmaNullException;
 import com.sistemaescolar.models.Aluno;
 import com.sistemaescolar.models.Turma;
 import com.sistemaescolar.repositories.TurmaRepository;
@@ -17,20 +20,42 @@ public class TurmaService {
 	
     
     public Turma criarTurma (Turma turma) { 
-    	
-    return turmaRepository.save(turma);	
+    	if(turma.getNome() == null || turma.getAno() == null) { 
+    		
+    		throw new TurmaNullException(); 		
+    	}
+    
+    	return turmaRepository.save(turma);	
+    
     }
     
     
     
     public List<Turma> listarTurmas(){ 
-    	return turmaRepository.findAll();
+    	
+    	List<Turma> turmas = turmaRepository.findAll(); 
+    	
+    	if(turmas.isEmpty()) { 
+    	
+    		throw new TurmaNotFoundException();
+   
+    	}
+   
+    	return turmas;
     }
     
     
     public List<Aluno> listarAlunos(String nome){ 
     	
-    	return turmaRepository.findByNomeContainingIgnoreCase(nome);
+    	List<Aluno> alunos = turmaRepository.findByNomeContainingIgnoreCase(nome);
+    	
+    	if(alunos.isEmpty()) { 
+    		
+    		throw new AlunoNotFoundException();
+    		
+    	}
+    	
+    	return alunos;
     	
     }
     
@@ -40,7 +65,7 @@ public class TurmaService {
     
     public void deletarTurma(Long id) {
         if (!turmaRepository.existsById(id)) {
-            throw new IllegalArgumentException("Turma com ID " + id + " não encontrada.");
+            throw new TurmaNotFoundException();
         }
         turmaRepository.deleteById(id);
     }
