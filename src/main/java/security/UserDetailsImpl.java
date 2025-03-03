@@ -22,9 +22,14 @@ public class UserDetailsImpl implements UserDetails {
         this.user = user;
     }
 
+   
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return user.getCargo()
+   /*mapeia o valor do atributo "cargo" do objeto user e retorna uma coleção que 
+     estende GrantedAuthority. Para cada cargo (role), cria um novo SimpleGrantedAuthority, 
+     que é a forma como o Spring Security representa permissões. 
+      */
+    	return user.getCargo()
                 .stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName().name()))
                 .collect(Collectors.toList());
@@ -34,12 +39,12 @@ public class UserDetailsImpl implements UserDetails {
     @Override
     public String getPassword() {
         return user.getSenha();
-    } // Retorna a credencial do usuário que criamos anteriormente
+    } 
 
     @Override
     public String getUsername() {
         return user.getEmail();
-    } // Retorna o nome de usuário do usuário que criamos anteriormente
+    } 
 
     @Override
     public boolean isAccountNonExpired() {

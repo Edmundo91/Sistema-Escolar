@@ -46,7 +46,7 @@ public List<Users> buscarUserPorNome(String nome) {
 
 }
 
-
+// deleta user pelo id
 public void DeleteUser(Long id) { 
 	
 	if(!userRepository.existsById(id)) {
