@@ -1,5 +1,6 @@
 package com.sistemaescolar.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sistemaescolar.enums.AnosEnum;
 
 import jakarta.persistence.Entity;
@@ -25,6 +26,7 @@ public class Ano {
 	private Long id; 
 	
 	@Enumerated(EnumType.STRING)
+	@JsonProperty("ano")
 	private AnosEnum ano;
 	
 	

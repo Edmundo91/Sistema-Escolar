@@ -2,6 +2,7 @@ package com.sistemaescolar.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.sistemaescolar.exceptions.UserNotFoundException;
 import com.sistemaescolar.exceptions.UserNullException;
@@ -11,6 +12,7 @@ import com.sistemaescolar.repositories.UsersRepository;
 @Service
 public class UsersService {
 
+@Autowired
 private UsersRepository userRepository; 
 
 

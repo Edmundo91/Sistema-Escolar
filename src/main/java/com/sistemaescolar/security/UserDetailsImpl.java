@@ -1,4 +1,4 @@
-package security;
+package com.sistemaescolar.security;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

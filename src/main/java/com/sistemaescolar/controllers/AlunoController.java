@@ -8,10 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sistemaescolar.dto.AlunoDTO;
 import com.sistemaescolar.models.Aluno;
 import com.sistemaescolar.services.AlunoService;
 
@@ -25,24 +29,24 @@ public class AlunoController {
 	
 	//Endpoint para registrar aluno
     @PostMapping("/save")
-	public Aluno registrarAluno(Aluno aluno){ 
+	public Aluno registrarAluno(@RequestBody AlunoDTO alunoDTO){ 
 	
-	 return service.salvarAluno(aluno); 
+	 return service.salvarAluno(alunoDTO); 
     	
     }
 
     
     //Endpoint para buscar aluno por nome
     @GetMapping("/busca")
-    public List<Aluno> buscarAlunoPorNome(String name) { 
+    public List<Aluno> buscarAlunoPorNome(@RequestParam String nome) { 
     	
-    	return service.buscarPorNome(name);
+    	return service.buscarPorNome(nome);
     	
     }
         
     //Endpoint para buscar aluno por id
    @GetMapping("/{id}") 
-   public Aluno buscarAlunoPorId(Long id){ 
+   public Aluno buscarAlunoPorId(@PathVariable Long id){ 
 	   
 	   return service.buscarAlunoPorId(id); 
 	   
@@ -52,9 +56,9 @@ public class AlunoController {
    
    //Endpoint para deletar aluno
    @DeleteMapping("/{id}") 
-   public void deletarAluno(Long id) { 
+   public String deletarAluno(@PathVariable Long id) { 
 	   
-	 service.deletarAluno(id); 
+	 return service.deletarAluno(id); 
 	     
    } 
    

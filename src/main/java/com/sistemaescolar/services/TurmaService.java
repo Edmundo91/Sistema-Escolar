@@ -20,6 +20,10 @@ public class TurmaService {
 	
     
     public Turma criarTurma (Turma turma) { 
+    	
+    	
+    	System.out.println("turma");
+    	
     	if(turma.getNome() == null || turma.getAno() == null) { 
     		
     		throw new TurmaNullException(); 		
@@ -63,11 +67,13 @@ public class TurmaService {
     
     
     
-    public void deletarTurma(Long id) {
+    public String deletarTurma(Long id) {
         if (!turmaRepository.existsById(id)) {
             throw new TurmaNotFoundException();
         }
         turmaRepository.deleteById(id);
+    
+        return "Turma deletada";
     }
 	
     

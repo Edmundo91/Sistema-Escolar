@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,7 +28,7 @@ public class TurmaController {
 	
 	//Endpoint para criar uma turma
     @PostMapping("/save")
-	public Turma registrarTurma(Turma turma){ 
+	public Turma registrarTurma(@RequestBody Turma turma){ 
 	
 	 return service.criarTurma(turma);
     	
@@ -44,9 +46,9 @@ public class TurmaController {
     
    //Endpoint para deletar turma
   @DeleteMapping("{id}")
-   public void deletarTurma(Long id) { 
+   public String deletarTurma(@PathVariable  Long id) { 
 	   
-	 service.deletarTurma(id); 
+	return service.deletarTurma(id); 
 	 
 	
    }

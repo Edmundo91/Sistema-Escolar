@@ -1,15 +1,20 @@
 package com.sistemaescolar.services;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sistemaescolar.dto.AlunoDTO;
 import com.sistemaescolar.exceptions.AlunoNotFoundException;
 import com.sistemaescolar.exceptions.AlunoNullException;
+import com.sistemaescolar.exceptions.TurmaNullException;
 import com.sistemaescolar.models.Aluno;
+import com.sistemaescolar.models.Turma;
 import com.sistemaescolar.repositories.AlunoRepository;
+import com.sistemaescolar.repositories.TurmaRepository;
 
 @Service
 public class AlunoService {
@@ -17,17 +22,34 @@ public class AlunoService {
 	@Autowired
 	private AlunoRepository alunoRepository;
 	
+	@Autowired
+    private TurmaRepository turmaRepository;
 	
 	// Criar um Aluno
-	public Aluno salvarAluno(Aluno aluno) { 
+	public Aluno salvarAluno(AlunoDTO alunoDTO) { 
 	
-		if(aluno.getNome() == null || aluno.getTurma() == null) { 
+	if(alunoDTO.getNome() == null || alunoDTO.getTurmaNome() == null) { 
 			throw new AlunoNullException();	
-		}
-		
-		return alunoRepository.save(aluno);
-		
 	}
+		
+	
+	Turma turma = turmaRepository.findByNome(alunoDTO.getTurmaNome());
+	
+	if(turma == null) { 
+		  
+		  throw new TurmaNullException();   
+	  }
+	 
+	  Aluno aluno = new Aluno();
+	        aluno.setNome(alunoDTO.getNome()); 
+	        aluno.setDataNascimento(LocalDate.parse(alunoDTO.getDataNascimento())); 
+	        aluno.setTurma(turma);
+			
+	        return alunoRepository.save(aluno);
+   
+		}	
+		
+	
 	
 
     // Buscar aluno por ID
@@ -53,12 +75,14 @@ public class AlunoService {
     
     
     // Deletar aluno
-    public void deletarAluno(Long id) {
+    public String deletarAluno(Long id) {
  
     	if (!alunoRepository.existsById(id)) {
             throw new AlunoNotFoundException();
         }
        alunoRepository.deleteById(id); 
+    
+       return "aluno deletado";
     }
 	
 	
