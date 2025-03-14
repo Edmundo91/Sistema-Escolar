@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sistemaescolar.dto.TurmaDTO;
 import com.sistemaescolar.models.Turma;
 import com.sistemaescolar.services.TurmaService;
 
@@ -28,9 +29,9 @@ public class TurmaController {
 	
 	//Endpoint para criar uma turma
     @PostMapping("/save")
-	public Turma registrarTurma(@RequestBody Turma turma){ 
+	public Turma registrarTurma(@RequestBody TurmaDTO turmaDTO){ 
 	
-	 return service.criarTurma(turma);
+	 return service.criarTurma(turmaDTO);
     	
     }
 

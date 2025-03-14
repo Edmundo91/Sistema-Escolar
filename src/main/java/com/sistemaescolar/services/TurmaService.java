@@ -5,10 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sistemaescolar.dto.TurmaDTO;
 import com.sistemaescolar.exceptions.AlunoNotFoundException;
 import com.sistemaescolar.exceptions.TurmaNotFoundException;
 import com.sistemaescolar.exceptions.TurmaNullException;
 import com.sistemaescolar.models.Aluno;
+import com.sistemaescolar.models.Ano;
+import com.sistemaescolar.models.Periodo;
 import com.sistemaescolar.models.Turma;
 import com.sistemaescolar.repositories.TurmaRepository;
 
@@ -19,16 +22,38 @@ public class TurmaService {
 	private TurmaRepository turmaRepository;
 	
     
-    public Turma criarTurma (Turma turma) { 
+    
+    public Turma criarTurma (TurmaDTO turmaDTO) { 
     	
     	
     	System.out.println("turma");
     	
-    	if(turma.getNome() == null || turma.getAno() == null) { 
+    	if(turmaDTO.getNome() == null || turmaDTO.getAnoLetivo() == null 
+    		|| turmaDTO.getTurno() == null ) { 
     		
     		throw new TurmaNullException(); 		
     	}
     
+    	Turma turma = new Turma(); 
+    	
+    	turma.setNome(turmaDTO.getNome());
+    	
+    	
+    	// instancia o ano para settar na turma
+    	Ano ano = new Ano();
+        
+    	ano.setAno(turmaDTO.getAnoLetivo()); 
+
+        turma.setAno(ano); 
+        
+        //instancia o periodo para settar na turma 
+        Periodo periodo = new Periodo();
+        
+        periodo.setPeriodo(turmaDTO.getTurno());
+        
+        turma.setPeriodo(periodo);
+        
+    	
     	return turmaRepository.save(turma);	
     
     }
