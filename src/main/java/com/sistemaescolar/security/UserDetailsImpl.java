@@ -36,6 +36,12 @@ public class UserDetailsImpl implements UserDetails {
     } 
     
 
+
+    public Users getUser() {  // Adicione este método
+        return this.user;
+    }
+    
+    
     @Override
     public String getPassword() {
         return user.getSenha();

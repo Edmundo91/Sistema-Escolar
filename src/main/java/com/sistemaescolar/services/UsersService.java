@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.sistemaescolar.dto.UsersDTO;
@@ -25,6 +26,10 @@ private UsersRepository userRepository;
 @Autowired
 private RoleRepository roleRepository;
 
+@Autowired
+private PasswordEncoder passwordEncoder;
+
+
 public Users SalvarUser(UsersDTO usersDTO) { 
 	
 	if (usersDTO.getNome() == null || usersDTO.getEmail() == null || usersDTO.getSenha() == null  
@@ -37,7 +42,7 @@ public Users SalvarUser(UsersDTO usersDTO) {
 	
 	users.setNome(usersDTO.getNome()); 
 	users.setEmail(usersDTO.getEmail());
-	users.setSenha(usersDTO.getSenha()); 
+	users.setSenha(passwordEncoder.encode(usersDTO.getSenha()));
 	users.setDataNascimento(LocalDate.parse(usersDTO.getDataNascimento())); 
 	
 	
