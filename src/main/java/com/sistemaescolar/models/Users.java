@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 import java.util.List;
 
-
+import com.sistemaescolar.exceptions.CpfInvalidException;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -31,6 +31,10 @@ public class Users {
 	
 	private String nome;  
 	
+	private String cpf; 
+	
+	private String endereco;
+	
 	private LocalDate dataNascimento;
 	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
@@ -38,5 +42,20 @@ public class Users {
     joinColumns = @JoinColumn(name = "user_id"),
     inverseJoinColumns = @JoinColumn(name="role_id"))
 	private List<Role> cargo;
+	
+	
+	
+	public void setCpfFormat(String cpf) {
+	    if (cpf != null && cpf.length() == 11) {
+	        this.cpf = cpf.substring(0, 3) + "." + cpf.substring(3, 6) + "." + cpf.substring(6, 9) + "-" + cpf.substring(9, 11);
+	    } else {
+	        throw new CpfInvalidException();
+	    }
+	}
+	
+	
+	
+	
+	
 	
 }

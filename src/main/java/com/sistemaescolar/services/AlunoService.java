@@ -12,8 +12,12 @@ import com.sistemaescolar.exceptions.AlunoNotFoundException;
 import com.sistemaescolar.exceptions.AlunoNullException;
 import com.sistemaescolar.exceptions.TurmaNullException;
 import com.sistemaescolar.models.Aluno;
+import com.sistemaescolar.models.Boletim;
+
 import com.sistemaescolar.models.Turma;
 import com.sistemaescolar.repositories.AlunoRepository;
+
+
 import com.sistemaescolar.repositories.TurmaRepository;
 
 @Service
@@ -24,6 +28,7 @@ public class AlunoService {
 	
 	@Autowired
     private TurmaRepository turmaRepository;
+	
 	
 	// Criar um Aluno
 	public Aluno salvarAluno(AlunoDTO alunoDTO) { 
@@ -43,9 +48,17 @@ public class AlunoService {
 	  Aluno aluno = new Aluno();
 	        aluno.setNome(alunoDTO.getNome()); 
 	        aluno.setDataNascimento(LocalDate.parse(alunoDTO.getDataNascimento())); 
+	        aluno.setCpfFormat(alunoDTO.getCpf()); 
+	        aluno.setEndereco(alunoDTO.getEndereco());
 	        aluno.setTurma(turma);
 			
-	        return alunoRepository.save(aluno);
+	        Boletim boletim = new Boletim();
+	     
+	        aluno.setBoletim(boletim);
+	        
+	      
+	    	    return alunoRepository.save(aluno);
+	       
    
 		}	
 		

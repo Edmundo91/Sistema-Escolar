@@ -42,6 +42,8 @@ public Users SalvarUser(UsersDTO usersDTO) {
 	
 	users.setNome(usersDTO.getNome()); 
 	users.setEmail(usersDTO.getEmail());
+	users.setCpfFormat(usersDTO.getCpf());
+	users.setEndereco(usersDTO.getEndereco());
 	users.setSenha(passwordEncoder.encode(usersDTO.getSenha()));
 	users.setDataNascimento(LocalDate.parse(usersDTO.getDataNascimento())); 
 	

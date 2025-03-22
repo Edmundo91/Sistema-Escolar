@@ -17,6 +17,8 @@ public class UsersDTO {
 	private String email; 
 	private String senha;
 	private String dataNascimento; 
+	private String cpf; 
+	private String endereco;
 	private List<String> posto;
 	
 

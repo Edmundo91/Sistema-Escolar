@@ -29,6 +29,9 @@ public class SecurityConfigurations {
              .authorizeHttpRequests(authorize -> authorize 
             		.requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
             		.requestMatchers(HttpMethod.POST, "/user/save").permitAll()
+            		.requestMatchers(HttpMethod.GET, "/turma/listar").permitAll()
+            		.requestMatchers(HttpMethod.GET, "/aluno/busca").permitAll()
+            		.requestMatchers(HttpMethod.POST, "/disciplina/save").hasRole("ADMINISTRADOR")
             		.requestMatchers(HttpMethod.POST, "/turma/save").hasRole("ADMINISTRADOR")
             		.requestMatchers(HttpMethod.POST, "/aluno/save").hasRole("ADMINISTRADOR")
             		.anyRequest().authenticated() 

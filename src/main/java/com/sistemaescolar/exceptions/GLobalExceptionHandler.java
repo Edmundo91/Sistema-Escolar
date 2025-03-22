@@ -107,7 +107,22 @@ public class GLobalExceptionHandler extends ResponseEntityExceptionHandler  {
 				
 				
 				
-				
+				@ExceptionHandler(CpfInvalidException.class)
+				public ResponseEntity<Object> CpfInvalid(){  
+					
+					Map<String, Object> body = new HashMap<String, Object>(); 
+					
+					body.put("message", "erro na geração do token"); 
+					
+					return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
+					
+				}
 				
 		
+				
+				
+				
+				
+				
+				
 }
