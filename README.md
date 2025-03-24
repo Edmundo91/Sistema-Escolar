@@ -20,7 +20,7 @@ O **Sistema Escolar** é uma aplicação web que visa gerenciar turmas, alunos, 
 - **Spring Security**: Para controle de autenticação e autorização.
 - **JWT (JSON Web Token)**: Para autenticação via token.
 - **JPA (Java Persistence API)**: Para manipulação de banco de dados com Hibernate.
-- **MySQL**: Banco de dados utilizado para persistência dos dados.
+- **PostgreSQL**: Banco de dados utilizado para persistência dos dados.
 
 ## Endpoints Principais
 
