@@ -4,9 +4,12 @@ import jakarta.persistence.ForeignKey;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.sistemaescolar.enums.CicloEnum;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,6 +31,10 @@ public class Turma {
 	@OneToOne(cascade = CascadeType.ALL) 
 	@JoinColumn(name = "ano_id", foreignKey = @ForeignKey(name = "fk_turma_ano")) 
 	private Ano ano;
+	
+	@Enumerated(EnumType.STRING)
+	@JsonBackReference
+	private CicloEnum ciclo;
 	
 	@OneToMany(mappedBy = "turma")
 	@JsonBackReference

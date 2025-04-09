@@ -3,7 +3,7 @@ package com.sistemaescolar.models;
 import java.time.LocalDate;
 import java.time.Period;
 
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sistemaescolar.exceptions.CpfInvalidException;
 

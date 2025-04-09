@@ -120,7 +120,17 @@ public class GLobalExceptionHandler extends ResponseEntityExceptionHandler  {
 				
 		
 				
-				
+
+				@ExceptionHandler(DisciplinaNullException.class)
+				public ResponseEntity<Object> DisciplinaNull(){  
+					
+					Map<String, Object> body = new HashMap<String, Object>(); 
+					
+					body.put("message", "todos os espaços devem ser preenchidos. Verifique se o ciclo da disciplina foi definido"); 
+					
+					return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
+					
+				}
 				
 				
 				

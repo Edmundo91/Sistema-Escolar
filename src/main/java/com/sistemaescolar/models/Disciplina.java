@@ -1,8 +1,11 @@
 package com.sistemaescolar.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.sistemaescolar.enums.CicloEnum;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -27,6 +30,8 @@ public class Disciplina {
 	
 	String nome; 
 	
+	@Enumerated(EnumType.STRING)
+	private CicloEnum ciclo;
 	
 	@ManyToOne
     @JoinColumn(name = "boletim_id")

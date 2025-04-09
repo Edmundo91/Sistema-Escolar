@@ -390,7 +390,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_sgdKcO_rEe-0ivIOXbFg9g" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_No0OkASJEfC9sqywwqhM4A" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_sNfyau_rEe-0ivIOXbFg9g"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nbZBAAhIEfCR387nd8WYqw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_sNfyau_rEe-0ivIOXbFg9g"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_sgdKce_rEe-0ivIOXbFg9g" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -398,8 +398,8 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_sgdxgO_rEe-0ivIOXbFg9g" elementId="org.eclipse.ui.workbench.edit">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_No2DwASJEfC9sqywwqhM4A" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_sNa50O_rEe-0ivIOXbFg9g"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_No2q0ASJEfC9sqywwqhM4A" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_sNcvCe_rEe-0ivIOXbFg9g"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nbaPIAhIEfCR387nd8WYqw" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_sNa50O_rEe-0ivIOXbFg9g"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nba2MAhIEfCR387nd8WYqw" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_sNcvCe_rEe-0ivIOXbFg9g"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_sgdxge_rEe-0ivIOXbFg9g" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -420,7 +420,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_sgdxhe_rEe-0ivIOXbFg9g" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_No348ASJEfC9sqywwqhM4A" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_sNfLYu_rEe-0ivIOXbFg9g"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nbcEUAhIEfCR387nd8WYqw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_sNfLYu_rEe-0ivIOXbFg9g"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_sgeYkO_rEe-0ivIOXbFg9g" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -950,6 +950,13 @@
   <bindingTables xmi:id="_spACce_rEe-0ivIOXbFg9g" bindingContext="_spACcO_rEe-0ivIOXbFg9g"/>
   <bindingTables xmi:id="_spACc-_rEe-0ivIOXbFg9g" bindingContext="_spACcu_rEe-0ivIOXbFg9g"/>
   <bindingTables xmi:id="_spACde_rEe-0ivIOXbFg9g" bindingContext="_spACdO_rEe-0ivIOXbFg9g"/>
+  <bindingTables xmi:id="_nOIoIAhIEfCR387nd8WYqw" elementId="yamleditor.editors.YamlEditor.context" bindingContext="_nNyp4AhIEfCR387nd8WYqw">
+    <bindings xmi:id="_nOIoIQhIEfCR387nd8WYqw" keySequence="CTRL+SHIFT+P" command="_nNu_gAhIEfCR387nd8WYqw"/>
+    <bindings xmi:id="_nOJPMAhIEfCR387nd8WYqw" keySequence="CTRL+7" command="_nNvmlwhIEfCR387nd8WYqw"/>
+    <bindings xmi:id="_nOLEYAhIEfCR387nd8WYqw" keySequence="CTRL+SHIFT+F" command="_nNvmkwhIEfCR387nd8WYqw"/>
+    <bindings xmi:id="_nOMSgAhIEfCR387nd8WYqw" keySequence="CTRL+O" command="_nNvmlghIEfCR387nd8WYqw"/>
+    <bindings xmi:id="_nOOuwAhIEfCR387nd8WYqw" keySequence="F3" command="_nNvmkAhIEfCR387nd8WYqw"/>
+  </bindingTables>
   <rootContext xmi:id="_sMo2l-_rEe-0ivIOXbFg9g" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/org.eclipse.platform" name="In Dialogs and Windows" description="Either a dialog or a window is open">
     <children xmi:id="_sMo2mO_rEe-0ivIOXbFg9g" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/org.eclipse.platform" name="In Windows" description="A window is open">
       <children xmi:id="_sMo2me_rEe-0ivIOXbFg9g" elementId="org.eclipse.e4.ui.contexts.views" contributorURI="platform:/plugin/org.eclipse.platform" name="%bindingcontext.name.bindingView"/>
@@ -972,6 +979,7 @@
         </children>
         <children xmi:id="_sNlR0-_rEe-0ivIOXbFg9g" elementId="org.eclipse.ant.ui.AntEditorScope" name="Editing Ant Buildfiles" description="Editing Ant Buildfiles Context"/>
         <children xmi:id="_sNlR1-_rEe-0ivIOXbFg9g" elementId="org.eclipse.jdt.ui.propertiesEditorScope" name="Editing Properties Files" description="Editing Properties Files Context"/>
+        <children xmi:id="_nNyp4AhIEfCR387nd8WYqw" elementId="yamleditor.editors.YamlEditor.context" name="Yaml context" description="Editing Yaml files"/>
       </children>
       <children xmi:id="_sNkqte_rEe-0ivIOXbFg9g" elementId="org.eclipse.debug.ui.console" name="In I/O Console" description="In I/O console"/>
       <children xmi:id="_sNkqtu_rEe-0ivIOXbFg9g" elementId="org.eclipse.tm.terminal.view.ui.TerminalsView" name="In Terminal View" description="Show modified keyboard shortcuts in context menu"/>
@@ -2566,6 +2574,16 @@
   <commands xmi:id="_sdumk-_rEe-0ivIOXbFg9g" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.doc.legend.show.action" commandName="Show UI Legend" description="Show Tasks UI Legend" category="_sNUzN-_rEe-0ivIOXbFg9g"/>
   <commands xmi:id="_sdumlO_rEe-0ivIOXbFg9g" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.context.ui.actions.tasklist.focus" commandName="Focus on Workweek" description="Focus on Workweek" category="_sNUzN-_rEe-0ivIOXbFg9g"/>
   <commands xmi:id="_sdvNoO_rEe-0ivIOXbFg9g" elementId="AUTOGEN:::org.eclipse.pde.ui.logViewActions/org.eclipse.jdt.debug.ui.LogViewActions.showStackTrace" commandName="Show Stack Trace in Console View" description="Show Stack Trace in Console View" category="_sNUzN-_rEe-0ivIOXbFg9g"/>
+  <commands xmi:id="_nNu_gAhIEfCR387nd8WYqw" elementId="yamleditor.editor.commands.gotomatchingbracket" commandName="Goto matching bracket" description="Goto matching bracket inside gradle document" category="_nNuYcQhIEfCR387nd8WYqw"/>
+  <commands xmi:id="_nNvmkAhIEfCR387nd8WYqw" elementId="yamleditor.editor.commands.movecolumnline" commandName="Move column marker to current caret position" description="Sets column marker line to current caret position" category="_nNuYcQhIEfCR387nd8WYqw"/>
+  <commands xmi:id="_nNvmkQhIEfCR387nd8WYqw" elementId="yamleditor.editor.commands.folding.expandall" commandName="Expand all folding" description="Expand all folding nodes inside editor" category="_nNuYcQhIEfCR387nd8WYqw"/>
+  <commands xmi:id="_nNvmkghIEfCR387nd8WYqw" elementId="yamleditor.editor.commands.validate" commandName="Validate YAML" description="Start yaml parsing and shows validation problems" category="_nNuYcQhIEfCR387nd8WYqw"/>
+  <commands xmi:id="_nNvmkwhIEfCR387nd8WYqw" elementId="yamleditor.editor.commands.source.format" commandName="Format" description="Format yaml source code" category="_nNuYcQhIEfCR387nd8WYqw"/>
+  <commands xmi:id="_nNvmlAhIEfCR387nd8WYqw" elementId="yamleditor.editor.commands.folding.collapseall" commandName="Collapse all folding" description="Collapse all folding nodes inside editor" category="_nNuYcQhIEfCR387nd8WYqw"/>
+  <commands xmi:id="_nNvmlQhIEfCR387nd8WYqw" elementId="yamleditor.editor.commands.folding.toggle" commandName="Toggle folding enabled" description="Toggle folding enabled state for this editor. If you want change initial behaviour change preferences" category="_nNuYcQhIEfCR387nd8WYqw"/>
+  <commands xmi:id="_nNvmlghIEfCR387nd8WYqw" elementId="yamleditor.editor.commands.quickoutline" commandName="Quick outline" description="Show quick outline dialog" category="_nNuYcQhIEfCR387nd8WYqw"/>
+  <commands xmi:id="_nNvmlwhIEfCR387nd8WYqw" elementId="yamleditor.editor.commands.source.toggleComment" commandName="Toggle comment" description="Toggle comment in selected line(s)" category="_nNuYcQhIEfCR387nd8WYqw"/>
+  <commands xmi:id="_nNvmmAhIEfCR387nd8WYqw" elementId="yamleditor.editor.commands.sortAscending" commandName="Sort mapping (ascending)" description="Sorts and changes yaml source code. Mapping will be sorted ascending after this" category="_nNuYcQhIEfCR387nd8WYqw"/>
   <addons xmi:id="_sMo2m-_rEe-0ivIOXbFg9g" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_sMo2nO_rEe-0ivIOXbFg9g" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_sMo2ne_rEe-0ivIOXbFg9g" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -2577,7 +2595,7 @@
   <addons xmi:id="_sMo2o-_rEe-0ivIOXbFg9g" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_sMo2pO_rEe-0ivIOXbFg9g" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_sM4HIO_rEe-0ivIOXbFg9g" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_NcXuAASJEfC9sqywwqhM4A" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_sNUMAO_rEe-0ivIOXbFg9g" elementId="org.eclipse.team.ui.category.team" name="Version control (Team)" description="Actions that apply when working with a version control system"/>
   <categories xmi:id="_sNUzEO_rEe-0ivIOXbFg9g" elementId="org.eclipse.ui.category.views" name="Views" description="Commands for opening views"/>
@@ -2620,4 +2638,5 @@
   <categories xmi:id="_sNUzNe_rEe-0ivIOXbFg9g" elementId="org.eclipse.pde.runtime.spy.commands.category" name="Spy"/>
   <categories xmi:id="_sNUzNu_rEe-0ivIOXbFg9g" elementId="org.eclipse.pde.ui.category.source" name="Manifest Editor Source" description="PDE Source Page actions"/>
   <categories xmi:id="_sNUzN-_rEe-0ivIOXbFg9g" elementId="org.eclipse.core.commands.categories.autogenerated" name="Uncategorized" description="Commands that were either auto-generated or have no category"/>
+  <categories xmi:id="_nNuYcQhIEfCR387nd8WYqw" elementId="yamleditor.commands.category" name="Yaml editor" description="Yaml editor"/>
 </application:Application>

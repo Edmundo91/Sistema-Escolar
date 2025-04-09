@@ -29,7 +29,7 @@ public class TurmaService {
     	System.out.println("turma");
     	
     	if(turmaDTO.getNome() == null || turmaDTO.getAnoLetivo() == null 
-    		|| turmaDTO.getTurno() == null ) { 
+    		|| turmaDTO.getTurno() == null || turmaDTO.getCiclo() == null) { 
     		
     		throw new TurmaNullException(); 		
     	}
@@ -53,6 +53,7 @@ public class TurmaService {
         
         turma.setPeriodo(periodo);
         
+        turma.setCiclo(turmaDTO.getCiclo());
     	
     	return turmaRepository.save(turma);	
     

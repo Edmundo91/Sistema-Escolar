@@ -1,9 +1,17 @@
 package com.sistemaescolar.dto;
 
-public class DisciplinaDTO {
-    private String nome;
+import com.sistemaescolar.enums.CicloEnum;
 
-    public String getNome() {
-        return nome;
-    }
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Getter 
+@Setter
+public class DisciplinaDTO {
+    
+	private String nome;
+    
+    private CicloEnum ciclo;
+
 }

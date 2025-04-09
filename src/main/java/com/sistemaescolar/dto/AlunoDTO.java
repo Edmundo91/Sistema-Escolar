@@ -1,5 +1,7 @@
 package com.sistemaescolar.dto;
 
+
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,4 +14,5 @@ public class AlunoDTO {
 	private String turmaNome;
     private String cpf;	
     private String endereco;
+  
 }
